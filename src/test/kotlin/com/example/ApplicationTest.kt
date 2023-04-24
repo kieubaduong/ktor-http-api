@@ -12,6 +12,7 @@ class ApplicationTest {
     fun testRoot() = testApplication {
         application {
             configureRouting()
+            configureSerialization()
         }
         client.get("/").apply {
             assertEquals(HttpStatusCode.OK, status)
